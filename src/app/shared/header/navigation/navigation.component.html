@@ -1,0 +1,4 @@
+<ng-container *ngFor="let navigationItem of navigationItems">
+  <a [routerLink]="navigationItem.routerLink"
+     class="navigation-link">{{ navigationItem.label }}</a>
+</ng-container>

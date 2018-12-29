@@ -1,0 +1,47 @@
+@import "./../../style/forms";
+@import "./../../style/mixins";
+@import "./../../style/variables";
+
+:host {
+  display: block;
+}
+
+.form-group {
+  &_services {
+    margin: 0;
+  }
+}
+
+.description {
+  @include font($hebrewRegular, 13px, $doveGrayColor);
+}
+
+.services {
+  .form-group-name {
+    padding: 0;
+  }
+}
+
+.hours {
+  padding-bottom: 10px;
+}
+
+.week-day,
+.hour,
+.close {
+  text-transform: uppercase;
+  @include font($hebrewRegular, 13px);
+}
+
+.week-day {
+  color: $doveGrayColor;
+}
+
+.hour,
+.close {
+  color: $mineShaftGrayColor;
+}
+
+.close {
+  cursor: pointer;
+}

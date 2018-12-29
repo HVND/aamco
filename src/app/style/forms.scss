@@ -1,0 +1,130 @@
+@import "mixins";
+
+.form-group-name {
+  text-transform: uppercase;
+  padding-bottom: 7px;
+  @include font($roboto, 18px, $biscayColor, 'none', 500);
+}
+
+.form-group {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.form-group-wrap {
+  display: flex;
+}
+
+.input-control {
+  border: 1px solid $biscayColor;
+  border-radius: 3px;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  @include font($hebrewRegular, 13px, $dustyGrayColor);
+}
+
+.form-control {
+  &_error {
+    &.input-control {
+      border-color: $redColor;
+    }
+  }
+}
+
+.checkbox-control {
+  display: block;
+  position: relative;
+  padding: 2px 0 0 28px;
+  margin-top: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  @include font($hebrewRegular, 13px, $mineShaftGrayColor);
+}
+
+.checkbox-control {
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: $whiteColor;
+    border: 1px solid $silverChaliceGrayColor;
+  }
+
+  .checkbox {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+  border-color: $silverChaliceGrayColor !important;
+}
+
+.checkbox-control .checkbox:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox-control .checkmark:after {
+  left: 7px;
+  top: 2px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.form-group {
+  .form-control {
+    width: 100%;
+  }
+
+  &_multiple {
+    .form-control {
+      width: 50%;
+    }
+
+    .form-control:last-child {
+      margin-left: 25px;
+    }
+  }
+}
+
+@include respond-to($mediumScreen) {
+  .form-group {
+    flex-direction: column;
+    margin: 0;
+  }
+  .form-group {
+    .form-control {
+      margin-bottom: 25px;
+    }
+  }
+
+  .form-group {
+    &_multiple {
+      .form-control {
+        width: 100%;
+      }
+
+      .form-control:last-child {
+        margin-left: 0;
+      }
+    }
+  }
+}

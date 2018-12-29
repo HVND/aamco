@@ -1,0 +1,23 @@
+@import "fonts";
+
+// media
+$smallScreen: '(max-width: 576px)';
+$mediumScreen: '(max-width: 768px)';
+$largeScreen: '(max-width: 992px)';
+$extraLargeScreen: '(max-width: 1200px)';
+
+// colors
+$blackColor: #000;
+$whiteColor: #fff;
+$biscayColor: #1d3f6f;
+$dustyGrayColor: #999;
+$doveGrayColor: #666;
+$mineShaftGrayColor: #333;
+$silverChaliceGrayColor: #acacac;
+$redColor: #fe000b;
+
+// fonts
+$hebrewBold: 'Open Sans Hebrew Bold', sans-serif;
+$hebrewRegular: 'Open Sans Hebrew Regular', sans-serif;
+$hebrewLight: 'Open Sans Hebrew Light', sans-serif;
+$roboto: 'Roboto', sans-serif;

@@ -1,0 +1,9 @@
+<div class="title">please select a convenient time to leave your vehicle with us</div>
+<form class="forms" [formGroup]="formGroup" (ngSubmit)="onSubmit()">
+  <aamco-schedule-form class="schedule-form"
+                       [form]="formGroup.get('schedule')">
+  </aamco-schedule-form>
+  <aamco-personal-details-form class="personal-details-form"
+                               [form]="formGroup.get('personalDetails')">
+  </aamco-personal-details-form>
+</form>

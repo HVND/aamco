@@ -1,0 +1,49 @@
+@import "app/style/mixins";
+@import "app/style/variables";
+@import "app/shared/button/button.directive";
+
+html,
+body {
+  margin: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.container,
+.main {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 926px;
+}
+
+.main {
+  width: 1160px;
+}
+
+@include respond-to($extraLargeScreen) {
+  .main {
+    width: 950px;
+  }
+}
+
+@include respond-to($largeScreen) {
+  .container,
+  .main {
+    width: 750px;
+  }
+}
+
+@include respond-to($mediumScreen) {
+  .container,
+  .main {
+    width: 100%;
+    margin: 0;
+  }
+}

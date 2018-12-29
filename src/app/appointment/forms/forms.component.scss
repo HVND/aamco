@@ -1,0 +1,69 @@
+@import "./../../style/mixins";
+@import "./../../style/variables";
+
+:host {
+  display: block;
+}
+
+.title {
+  text-align: center;
+  text-transform: uppercase;
+  padding: 20px 0;
+  @include font($roboto, 34px, $biscayColor, none, 500);
+}
+
+.forms {
+  display: flex;
+  flex-direction: row;
+}
+
+.schedule-form {
+  border-right: 1px solid $biscayColor;
+  padding-right: 40px;
+}
+
+.personal-details-form {
+  padding-left: 40px;
+}
+
+.schedule-form,
+.personal-details-form {
+  width: 50%;
+}
+
+@include respond-to($extraLargeScreen) {
+  .title {
+    font-size: 27px;
+  }
+}
+
+
+@include respond-to($largeScreen) {
+  .title {
+    font-size: 21px;
+  }
+}
+
+@include respond-to($mediumScreen) {
+  .forms {
+    flex-direction: column;
+  }
+
+  .schedule-form {
+    border: none;
+    padding: 0;
+  }
+
+  .schedule-form,
+  .personal-details-form {
+    width: 100%;
+  }
+
+  .personal-details-form {
+    padding: 0;
+  }
+
+  .title {
+    font-size: 18px;
+  }
+}

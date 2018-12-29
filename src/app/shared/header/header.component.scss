@@ -1,0 +1,134 @@
+@import "./../../style/mixins";
+@import "./../../style/variables";
+
+$header-height-sm: 446px;
+
+:host {
+  display: flex;
+  width: 100vw;
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+}
+
+.image {
+  @include respond-to($largeScreen) {
+    display: none;
+  }
+}
+
+:host {
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: $blackColor;
+    opacity: .6;
+  }
+
+  @include respond-to($largeScreen) {
+    height: $header-height-sm;
+    background: url(./../../../assets/images/header-bg.png) no-repeat center;
+  }
+}
+
+.topbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.description {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  @include font($roboto, 41px, $whiteColor);
+}
+
+.scroll-down-layer {
+  position: absolute;
+  top: -50%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 150px;
+  @include font($roboto, 14px, $whiteColor);
+}
+
+.scroll-down {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin: 0 5px;
+  -webkit-animation: scrollDown 2s infinite;
+  animation: scrollDown 2s infinite;
+  font-size: 22px;
+}
+
+@include respond-to($mediumScreen) {
+  .description {
+    font-size: 32px;
+  }
+
+  .scroll-down-layer {
+    margin-top: 140px;
+  }
+}
+
+@include respond-to($smallScreen) {
+  .description {
+    font-size: 16px;
+  }
+
+  .scroll-down-layer {
+    margin-top: 120px;
+  }
+}
+
+@-webkit-keyframes scrollDown {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  20% {
+    -webkit-transform: translate(0, 16px);
+    transform: translate(0, 16px);
+  }
+  40% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes scrollDown {
+  0% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+  20% {
+    -webkit-transform: translate(0, 16px);
+    transform: translate(0, 16px);
+  }
+  40% {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
+  }
+}

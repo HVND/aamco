@@ -1,0 +1,80 @@
+@import "./../../../style/variables";
+@import "./../../../style/mixins";
+
+:host {
+  display: block;
+  background: $whiteColor;
+  width: 100%;
+  opacity: .9;
+}
+
+.logo {
+  width: 81px;
+  height: 62px;
+  cursor: pointer;
+}
+
+.divider {
+  background: $blackColor;
+  height: 1px;
+  width: 100%;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contacts {
+  display: block;
+  text-transform: uppercase;
+  @include font($hebrewRegular, 11px, #999);
+  padding: 10px 0;
+}
+
+.direct {
+  display: flex;
+}
+
+.pointer {
+  @include font($hebrewRegular, 14px, #666);
+}
+
+.telephone {
+  padding-left: 10px;
+  @include font($hebrewLight, 34px, $redColor);
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.links {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 6px;
+}
+
+.link {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding-left: 10px;
+  @include font($hebrewRegular, 11px, $biscayColor);
+}
+
+.link {
+  &:hover {
+    color: #132b4c;
+  }
+}
+
+@include respond-to($smallScreen) {
+  .label,
+  .links {
+    display: none;
+  }
+}

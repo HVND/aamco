@@ -1,0 +1,26 @@
+@import "./../../../style/mixins";
+
+:host {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navigation-link {
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 10px 5px;
+  @include font($hebrewRegular, 13px, $biscayColor);
+}
+
+.navigation-link {
+  &:hover {
+    color: #132b4c;
+  }
+}
+
+@include respond-to($mediumScreen) {
+  :host {
+    flex-wrap: wrap;
+  }
+}

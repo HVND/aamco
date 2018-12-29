@@ -1,0 +1,28 @@
+@import "./../../style/variables";
+@import "./../../style/mixins";
+
+.button {
+  border: none;
+  color: white;
+  padding: 10px 40px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.button {
+  &_default {
+    border: 1px solid $biscayColor;
+    background: $whiteColor;
+    text-transform: uppercase;
+    @include font($hebrewRegular, 13px, $biscayColor);
+  }
+
+  &_primary {
+    background: $biscayColor;
+    text-transform: uppercase;
+    @include font($hebrewRegular, 13px, $whiteColor);
+  }
+}

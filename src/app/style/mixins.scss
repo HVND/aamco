@@ -1,0 +1,15 @@
+@import "variables";
+
+@mixin respond-to($media) {
+  @media only screen and #{$media} {
+    @content;
+  }
+}
+
+@mixin font($family: 'none', $size: 15px, $color: 'none', $line-height: 'none', $weight: 'normal') {
+  font-family: $family;
+  line-height: $line-height;
+  font-size: $size;
+  font-weight: $weight;
+  color: $color;
+}
