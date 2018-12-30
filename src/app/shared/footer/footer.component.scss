@@ -54,6 +54,10 @@
   cursor: pointer;
 }
 
+.link {
+  cursor: pointer;
+}
+
 @include respond-to($mediumScreen) {
   .categories {
     flex-direction: column;

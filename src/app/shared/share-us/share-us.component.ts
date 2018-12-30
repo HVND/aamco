@@ -11,7 +11,7 @@ import { finalize } from 'rxjs/operators';
 })
 export class ShareUsComponent implements OnInit {
   emailControl: FormControl;
-  private loading = false;
+  loading = false;
 
   constructor(private aamcoApiService: AamcoApiService,
               private messageService: MessageService) {
@@ -41,7 +41,6 @@ export class ShareUsComponent implements OnInit {
 
   /**
    * Returns true if the emailControl is invalid.
-   * @returns {boolean}
    */
   get isInvalidAndDirty(): boolean {
     const {invalid, dirty} = this.emailControl;

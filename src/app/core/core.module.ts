@@ -4,7 +4,6 @@ import { MessageService } from 'primeng/api';
 import { AamcoApiService } from './services/aamco-api.service';
 
 @NgModule({
-  declarations: [],
   imports: [
     CommonModule
   ],

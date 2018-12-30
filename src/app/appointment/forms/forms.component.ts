@@ -12,7 +12,7 @@ import { AppointmentInput } from '../../core/dto/appointment';
 })
 export class FormsComponent implements OnInit {
   formGroup: FormGroup;
-  private loading = false;
+  loading = false;
 
   @HostBinding('class.main') readonly containerClass = true;
 
@@ -22,46 +22,50 @@ export class FormsComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.setUpFormGroup();
+  }
+
+  setUpFormGroup() {
     this.formGroup = this.fb.group({
       schedule: this.fb.group({
-        'startDate': ['', [
+        startDate: ['', [
           Validators.required]
         ],
-        'startTime': ['', [
+        startTime: ['', [
           Validators.required]
         ],
-        'endDate': [''],
-        'endTime': [''],
-        'services': this.fb.group({
-          'transmission': [],
-          'vehicleMaintenance': [],
-          'vehicleRapair': [],
-          'other': [],
+        endDate: [''],
+        endTime: [''],
+        services: this.fb.group({
+          transmission: [],
+          vehicleMaintenance: [],
+          vehicleRapair: [],
+          other: [],
         })
       }),
       personalDetails: this.fb.group({
-        'yearOfCar': ['', [
+        yearOfCar: ['', [
           Validators.minLength(0)]
         ],
-        'car': ['', [
+        car: ['', [
           Validators.maxLength(50)]
         ],
-        'message': ['', [
+        message: ['', [
           Validators.maxLength(255)]
         ],
-        'firstName': ['', [
+        firstName: ['', [
           Validators.required,
           Validators.maxLength(50)]
         ],
-        'secondName': ['', [
+        secondName: ['', [
           Validators.maxLength(50)
         ]],
-        'email': ['', [
+        email: ['', [
           Validators.required,
           Validators.maxLength(50),
           Validators.email]
         ],
-        'telephone': ['', [
+        telephone: ['', [
           Validators.minLength(0)]
         ]
       })
