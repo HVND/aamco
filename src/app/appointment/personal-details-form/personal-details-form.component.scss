@@ -10,7 +10,8 @@
 }
 
 @include respond-to($mediumScreen) {
-  .reset-button {
+  .reset-button,
+  .form-controls {
     margin-bottom: 25px;
   }
 }

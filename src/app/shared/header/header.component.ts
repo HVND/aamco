@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavigationItem } from './navigation/navigation.interface';
 
 @Component({
@@ -6,13 +6,6 @@ import { NavigationItem } from './navigation/navigation.interface';
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
   @Input() navigationItems: NavigationItem[];
-
-  constructor() {
-  }
-
-  ngOnInit() {
-  }
-
 }

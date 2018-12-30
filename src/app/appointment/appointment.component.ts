@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { NavigationItem } from '../shared/header/navigation/navigation.interface';
 import { navigationItems } from './appointment.constants';
 
@@ -7,14 +7,10 @@ import { navigationItems } from './appointment.constants';
   templateUrl: './appointment.component.html',
   styleUrls: ['./appointment.component.scss']
 })
-export class AppointmentComponent implements OnInit {
+export class AppointmentComponent {
   navigationItems: NavigationItem[];
 
   constructor() {
     this.navigationItems = navigationItems;
   }
-
-  ngOnInit() {
-  }
-
 }

@@ -1,0 +1,27 @@
+<div class="main">
+  <div class="offers">
+    <div class="title">SIGN UP FOR SPECIAL OFFERS</div>
+    <div class="description">Enter your mail and you will get the best offers we have directlly to your inbox</div>
+    <form class="form-group" (submit)="onSubmit()">
+      <input
+        type="email"
+        class="form-control input-control"
+        placeholder="enter here your email"
+        [formControl]="emailControl"
+        [class.form-control_error]="isInvalidAndDirty">
+      <button aamcoButton="primary" class="submit-button" type="submit" [disabled]="emailControl.invalid || loading">Send</button>
+    </form>
+  </div>
+  <div class="socials">
+    <div class="title">Tell to Your Friends</div>
+    <div class="description">Some of your friends may like to visit if you recommend us. They’ll trust your taste!</div>
+    <div class="socials-links">
+      <button aamcoButton="primary" type="button" class="socials-link facebook">
+        <a class="fa fa-facebook-square icon"></a> Share
+      </button>
+      <button aamcoButton="info" type="button" class="socials-link twitter">
+        <a class="fa fa-twitter icon"></a> Tweet
+      </button>
+    </div>
+  </div>
+</div>

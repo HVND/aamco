@@ -10,6 +10,8 @@
   font-size: 16px;
   border-radius: 3px;
   cursor: pointer;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 .button {
@@ -21,7 +23,30 @@
   }
 
   &_primary {
+    &:hover {
+      opacity: .9;
+    }
+  }
+
+  &_info {
+    &:hover {
+      opacity: .9;
+    }
+  }
+
+  &:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+  }
+
+  &_primary {
     background: $biscayColor;
+    text-transform: uppercase;
+    @include font($hebrewRegular, 13px, $whiteColor);
+  }
+
+  &_info {
+    background: $curiousBlueColor;
     text-transform: uppercase;
     @include font($hebrewRegular, 13px, $whiteColor);
   }

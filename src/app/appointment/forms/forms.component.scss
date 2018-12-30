@@ -3,6 +3,7 @@
 
 :host {
   display: block;
+  padding-bottom: 15px;
 }
 
 .title {
@@ -18,7 +19,7 @@
 }
 
 .schedule-form {
-  border-right: 1px solid $biscayColor;
+  border-right: 1px solid $dustyGrayColor;
   padding-right: 40px;
 }
 

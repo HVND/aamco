@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { NavigationItem } from '../navigation/navigation.interface';
 
 @Component({
@@ -6,12 +6,6 @@ import { NavigationItem } from '../navigation/navigation.interface';
   templateUrl: './topbar.component.html',
   styleUrls: ['./topbar.component.scss']
 })
-export class TopbarComponent implements OnInit {
+export class TopbarComponent {
   @Input() navigationItems: NavigationItem[];
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
 }

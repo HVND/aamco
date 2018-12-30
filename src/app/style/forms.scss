@@ -19,15 +19,40 @@
   border: 1px solid $biscayColor;
   border-radius: 3px;
   padding: 10px 20px;
-  text-transform: uppercase;
   box-sizing: border-box;
   @include font($hebrewRegular, 13px, $dustyGrayColor);
 }
 
+.input-control {
+  &::placeholder {
+    text-transform: uppercase;
+  }
+}
+
 .form-control {
   &_error {
-    &.input-control {
-      border-color: $redColor;
+    &.input-control,
+    .input-control {
+      border-color: $brightRedColor;
+    }
+  }
+
+  &__with-icon {
+    position: relative;
+  }
+
+  &__with-icon {
+    .input-control {
+      width: 100%;
+    }
+
+    .icon {
+      position: absolute;
+      top: 50%;
+      transform: translate(-100%, -50%);
+      padding-right: 20px;
+      color: $redColor;
+      cursor: pointer;
     }
   }
 }
@@ -78,8 +103,8 @@
 }
 
 .checkbox-control .checkmark:after {
-  left: 7px;
-  top: 2px;
+  left: 5px;
+  top: 1px;
   width: 5px;
   height: 10px;
   border: solid white;

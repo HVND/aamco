@@ -1,0 +1,135 @@
+@import "./../../style/mixins";
+@import "./../../style/variables";
+@import "./../../style/forms";
+
+:host {
+  display: block;
+  border-top: 1px solid $dustyGrayColor;
+  padding: 50px 0;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+}
+
+.offers,
+.socials {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.offers {
+  border-right: 1px solid $dustyGrayColor;
+  position: relative;
+}
+
+.offers {
+  &:before {
+    content: 'Or';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    background: $whiteColor;
+    transform: translate(50%, -50%);
+    padding: 10px;
+    @include font($roboto, 24px, $dustyGrayColor);
+  }
+}
+
+.title,
+.description {
+  text-align: center;
+}
+
+.title {
+  text-transform: uppercase;
+  @include font($roboto, 26px, $biscayColor, 40px);
+}
+
+.description {
+  padding: 0 130px;
+  @include font($roboto, 16px, $scorpionColor);
+}
+
+.input-control {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  width: 244px !important;
+}
+
+.submit-button {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-group,
+.socials-links {
+  padding-top: 20px;
+}
+
+.socials-link {
+  padding: 3px 5px;
+  text-transform: initial;
+  @include font($roboto, 11px, $whiteColor);
+}
+
+.socials-link {
+  .icon {
+    color: $whiteColor;
+  }
+
+  &.facebook {
+    margin-right: 10px;
+  }
+}
+
+@include respond-to($largeScreen) {
+  .main {
+    flex-direction: column;
+  }
+
+  .offers,
+  .socials {
+    width: 100%;
+  }
+
+  .offers {
+    border-bottom: 1px solid $dustyGrayColor;
+    border-right: none;
+    position: relative;
+    padding-bottom: 40px;
+  }
+
+  .socials {
+    padding-top: 35px;
+  }
+
+  .form-group {
+    flex-direction: row;
+  }
+
+  .form-group {
+    .form-control {
+      margin: 0;
+    }
+  }
+
+  .offers {
+    &:before {
+      right: initial;
+      bottom: 0;
+      top: initial;
+      left: 50%;
+      transform: translate(-50%, 50%);
+    }
+  }
+}
+
+@include respond-to($smallScreen) {
+  .description {
+    padding: 0 80px;
+  }
+}

@@ -1,0 +1,28 @@
+@import "../../../forms";
+
+body .ui-dropdown {
+  @extend .input-control;
+}
+
+body p-dropdown {
+  @extend .form-control;
+}
+
+body .form-group_multiple .ui-dropdown,
+body p-dropdown {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+body .form-group_multiple .ui-dropdown:last-child {
+  margin-left: 0;
+}
+
+.ui-dropdown label.ui-dropdown-label {
+  text-transform: uppercase;
+  @include font($hebrewRegular, 13px, $dustyGrayColor);
+}
+
+body .ui-dropdown:not(.ui-state-disabled).ui-state-focus {
+  border-color: $biscayColor;
+}

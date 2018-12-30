@@ -27,8 +27,7 @@
 }
 
 .week-day,
-.hour,
-.close {
+.hour {
   text-transform: uppercase;
   @include font($hebrewRegular, 13px);
 }
@@ -37,11 +36,6 @@
   color: $doveGrayColor;
 }
 
-.hour,
-.close {
+.hour {
   color: $mineShaftGrayColor;
-}
-
-.close {
-  cursor: pointer;
 }

@@ -9,9 +9,9 @@ import { FormGroup } from '@angular/forms';
 export class ScheduleFormComponent {
   @Input() form: FormGroup;
 
-  shouldhideErrorOf(controlName): boolean {
-    const {valid, pristine} = this.form.get(controlName);
+  shouldShowErrorOf(controlName): boolean {
+    const {invalid, dirty} = this.form.get('schedule').get(controlName);
 
-    return valid || pristine;
+    return invalid && dirty;
   }
 }

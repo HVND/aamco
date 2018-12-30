@@ -1,12 +1,49 @@
-<ng-container [formGroup]="form">
+<ng-container [formGroup]="form.get('schedule')">
   <div class="form-group-name">date & time</div>
   <div class="form-group form-group_multiple">
-    <input type="text" class="form-control input-control" placeholder="select a date" formControlName="startDate">
-    <input type="text" class="form-control input-control" placeholder="select your time" formControlName="startTime">
+    <div class="form-control form-control__with-icon"
+         [class.form-control_error]="shouldShowErrorOf('startDate')">
+      <input type="text"
+             class="input-control"
+             placeholder="select a date"
+             formControlName="startDate"
+             [owlDateTime]="dt1"
+             [owlDateTimeTrigger]="dt1">
+      <owl-date-time #dt1 pickerType="calendar"></owl-date-time>
+      <i class="fa fa-calendar icon"></i>
+    </div>
+    <div class="form-control form-control__with-icon"
+         [class.form-control_error]="shouldShowErrorOf('startTime')">
+      <input
+        type="text"
+        class="input-control"
+        atp-time-picker
+        placeholder="select your time"
+        formControlName="startTime">
+      <i class="fa fa-clock-o icon"></i>
+    </div>
   </div>
   <div class="form-group form-group_multiple">
-    <input type="text" class="form-control input-control" placeholder="select a date" formControlName="endDate">
-    <input type="text" class="form-control input-control" placeholder="select your time" formControlName="endTime">
+    <div class="form-control form-control__with-icon"
+         [class.form-control_error]="shouldShowErrorOf('endDate')">
+      <input type="text"
+             class="input-control"
+             placeholder="select a date"
+             formControlName="endDate"
+             [owlDateTime]="dt2"
+             [owlDateTimeTrigger]="dt2">
+      <owl-date-time #dt2 pickerType="calendar"></owl-date-time>
+      <i class="fa fa-calendar icon"></i>
+    </div>
+    <div class="form-control form-control__with-icon"
+         [class.form-control_error]="shouldShowErrorOf('endTime')">
+      <input type="text"
+             class="input-control"
+             atp-time-picker
+             placeholder="select your time"
+             formControlName="endTime">
+      <i class="fa fa-clock-o icon"></i>
+    </div>
   </div>
   <div class="form-group form-group_services form-group_multiple">
     <div class="form-control hours">
@@ -27,25 +64,24 @@
         <div class="week-day">MON-WED</div>
         <div class="hour">08:00 AM - 05:00 PM</div>
       </div>
-      <div class="close">close</div>
     </div>
-    <div class="form-control services">
+    <div class="form-control services" formGroupName="services">
       <div class="form-group-name">choose your services</div>
       <div class="description">Please select the type of service(s) needed</div>
       <label class="checkbox-control">Transmission
-        <input type="checkbox" class="checkbox">
+        <input type="checkbox" class="checkbox" formControlName="transmission">
         <span class="checkmark"></span>
       </label>
       <label class="checkbox-control">Vehicle Maintenance
-        <input type="checkbox" class="checkbox">
+        <input type="checkbox" class="checkbox" formControlName="vehicleMaintenance">
         <span class="checkmark"></span>
       </label>
       <label class="checkbox-control">Vehicle Rapair
-        <input type="checkbox" class="checkbox">
+        <input type="checkbox" class="checkbox" formControlName="vehicleRapair">
         <span class="checkmark"></span>
       </label>
       <label class="checkbox-control">Other
-        <input type="checkbox" class="checkbox">
+        <input type="checkbox" class="checkbox" formControlName="other">
         <span class="checkmark"></span>
       </label>
     </div>

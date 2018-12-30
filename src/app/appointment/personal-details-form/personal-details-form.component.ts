@@ -8,9 +8,23 @@ import { FormGroup } from '@angular/forms';
 })
 export class PersonalDetailsFormComponent {
   @Input() form: FormGroup;
+  @Input() loading: boolean;
+
+  readonly cars = [
+    {label: 'Audi', value: 'Audi'},
+    {label: 'BMW', value: 'BMW'},
+    {label: 'Fiat', value: 'Fiat'},
+    {label: 'Ford', value: 'Ford'},
+    {label: 'Honda', value: 'Honda'},
+    {label: 'Jaguar', value: 'Jaguar'},
+    {label: 'Mercedes', value: 'Mercedes'},
+    {label: 'Renault', value: 'Renault'},
+    {label: 'VW', value: 'VW'},
+    {label: 'Volvo', value: 'Volvo'}
+  ];
 
   shouldShowErrorOf(controlName): boolean {
-    const {invalid, dirty} = this.form.get(controlName);
+    const {invalid, dirty} = this.form.get('personalDetails').get(controlName);
 
     return invalid && dirty;
   }

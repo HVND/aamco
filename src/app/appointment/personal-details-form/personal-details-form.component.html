@@ -1,23 +1,59 @@
-<ng-container [formGroup]="form">
+<ng-container [formGroup]="form.get('personalDetails')">
   <div class="form-group-name">your vehicle</div>
   <div class="form-group form-group_multiple">
-    <input type="number" class="form-control input-control" placeholder="year of car" formControlName="yearOfCar">
-    <input type="text" class="form-control input-control" placeholder="select your car" formControlName="car">
+    <input
+      type="number"
+      class="form-control input-control"
+      placeholder="year of car"
+      formControlName="yearOfCar"
+      [class.form-control_error]="shouldShowErrorOf('yearOfCar')">
+    <p-dropdown
+      [options]="cars"
+      formControlName="car"
+      [autoWidth]="false"
+      placeholder="Select your car"
+      optionLabel="label"
+      [showClear]="false">
+    </p-dropdown>
   </div>
   <div class="form-group">
-    <input type="text" class="form-control input-control" placeholder="write your message" formControlName="message">
+    <input
+      type="text"
+      class="form-control input-control"
+      placeholder="write your message"
+      formControlName="message"
+      [class.form-control_error]="shouldShowErrorOf('message')">
   </div>
   <div class="form-group-name">Personal details</div>
   <div class="form-group form-group_multiple">
-    <input type="text" class="form-control input-control" [class.form-control_error]="shouldShowErrorOf('firstName')" placeholder="First name" formControlName="firstName">
-    <input type="text" class="form-control input-control" placeholder="Second name" formControlName="secondName">
+    <input
+      type="text"
+      class="form-control input-control"
+      [class.form-control_error]="shouldShowErrorOf('firstName')"
+      placeholder="First name"
+      formControlName="firstName">
+    <input
+      type="text"
+      class="form-control input-control"
+      placeholder="Second name"
+      formControlName="secondName"
+      [class.form-control_error]="shouldShowErrorOf('secondName')">
   </div>
   <div class="form-group form-group_multiple">
-    <input type="text" class="form-control input-control" [class.form-control_error]="shouldShowErrorOf('email')" placeholder="E-mail" formControlName="email">
-    <input type="number" class="form-control input-control" placeholder="Phone Number" formControlName="telephone">
+    <input
+      type="text"
+      class="form-control input-control"
+      [class.form-control_error]="shouldShowErrorOf('email')"
+      placeholder="E-mail" formControlName="email">
+    <input
+      type="number"
+      class="form-control input-control"
+      placeholder="Phone Number"
+      formControlName="telephone"
+      [class.form-control_error]="shouldShowErrorOf('telephone')">
   </div>
   <div class="form-group form-controls">
     <button aamcoButton class="reset-button" type="reset">Clear</button>
-    <button aamcoButton="primary" class="submit-button" type="submit">Send</button>
+    <button aamcoButton="primary" class="submit-button" type="submit" [disabled]="form.invalid || loading">Send</button>
   </div>
 </ng-container>
